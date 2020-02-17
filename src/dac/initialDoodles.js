@@ -417,6 +417,7 @@ export default {
     },
     {
       id: 38,
+      size: [5, 5],
       line: [
         [2, 3],
         [1, 2],

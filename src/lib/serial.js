@@ -58,7 +58,7 @@ const doodleFromHash = (doodles, hash) => {
     const hashDoodle = parse(hash);
     const existing = doodles.items.find(
       doodle =>
-        doodle.size.every((a, i) => a === hashDoodle.size[i]) &&
+        (doodle.size || [5, 5]).every((a, i) => a === hashDoodle.size[i]) &&
         doodle.line.every((point, i) =>
           point.every((a, j) => a === hashDoodle.line[i][j]),
         ),

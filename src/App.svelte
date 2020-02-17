@@ -72,6 +72,8 @@
 
   const copyDoodleUrl = () => {
     navigator.clipboard.writeText(window.location);
+    setHash('');
+    canvasRef.clear();
   };
 
 </script>

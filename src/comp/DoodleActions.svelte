@@ -9,7 +9,10 @@
   // {# if navigator.share}{:else if navigator.clipboard} didn't work
   // in iframe in firefox (if_block is not defined)
   $: showShare = navigator.share;
-  $: showClip = !showShare && navigator.clipboard;
+  $: showClip =
+    !showShare &&
+    navigator.clipboard &&
+    !window.location.search.includes('embed');
 </script>
 
 <div class="flex items-start h-full bg-black">

@@ -143,7 +143,7 @@ const config = {
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    https: dev && {
+    https: dev && fs.existsSync('./cert') && {
       key: fs.readFileSync('./cert/privkey.pem'),
       cert: fs.readFileSync('./cert/fullchain.pem'),
     },

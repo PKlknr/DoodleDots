@@ -34,7 +34,7 @@
       {/if}
     </button>
   {:else}
-    <a class="" href="https://dots.humos.org">
+    <a class="" target="_blank" href="https://dots.humos.org">
       <DoodleIcon shape="fullscreenOff" />
     </a>
   {/if}

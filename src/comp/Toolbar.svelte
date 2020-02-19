@@ -18,19 +18,26 @@
 </script>
 
 <style>
-  button, a {
+  button,
+  a {
     @apply h-12 w-12;
   }
 </style>
 
 <div class="flex">
-  <button class="" on:click="{toggleFullscreen}">
-    {#if isFullscreen}
-      <DoodleIcon shape="fullscreenOn" />
-    {:else}
+  {#if !window.location.search.includes('embed')}
+    <button class="" on:click="{toggleFullscreen}">
+      {#if isFullscreen}
+        <DoodleIcon shape="fullscreenOn" />
+      {:else}
+        <DoodleIcon shape="fullscreenOff" />
+      {/if}
+    </button>
+  {:else}
+    <a class="" href="https://dots.humos.org">
       <DoodleIcon shape="fullscreenOff" />
-    {/if}
-  </button>
+    </a>
+  {/if}
 </div>
 
 <div class="flex">

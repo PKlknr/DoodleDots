@@ -18,7 +18,7 @@
   $: {
     if (currentDoodle) {
       canvasRef.showDoodle(currentDoodle);
-      setHash(serial.stringify(currentDoodle));
+      setHash(serial.stringify(currentDoodle), true);
     }
   }
 
@@ -28,11 +28,14 @@
       if (doodle) {
         showDoodle(doodle);
       }
+    } else {
+      currentDoodle = null;
+      canvasRef.clear();
     }
   };
 
-  const setHash = hash => {
-    history.replaceState({}, null, '#' + hash);
+  const setHash = (hash, replace) => {
+    history[replace ? 'replaceState' : 'pushState']({}, null, '#' + hash);
   };
 
   const share = doodle => {
